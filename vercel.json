@@ -1,26 +1,14 @@
 {
-  "functions": {
-    "api/index.py": {
-      "runtime": "python3.9",
-      "handler": "app",
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.py"
-    }
-  ],
   "builds": [
     {
       "src": "api/index.py",
       "use": "@vercel/python"
-    },
+    }
+  ],
+  "routes": [
     {
-      "src": "api/requirements.txt",
-      "use": "@vercel/python"
+      "src": "/(.*)",
+      "dest": "/api/index.py"
     }
   ],
   "headers": [
@@ -36,6 +24,12 @@
           "value": "nosniff"
         }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.py"
     }
   ]
 }
