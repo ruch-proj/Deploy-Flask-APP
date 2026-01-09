@@ -1736,6 +1736,3 @@ def ws_mock():
 if __name__ == '__main__':
     print("=" * 70)
     print("Axiom Trade Token Discovery Table - FIXED SEARCH BEHAVIOR")
-
-
-    app.run(debug=True, port=5000)
