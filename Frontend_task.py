@@ -853,12 +853,6 @@ HTML_TEMPLATE = '''
             setTimeout(() => {
                 hideLoading();
             }, 1500);
-
-            // Pre-populate search with "solana" for demo
-            setTimeout(() => {
-                document.querySelector('.search-input').value = 'solana';
-                searchTokens('solana');
-            }, 2000);
         });
 
         // Set active navigation
@@ -1735,4 +1729,7 @@ def ws_mock():
 # ==================== START APPLICATION ====================
 if __name__ == '__main__':
     print("=" * 70)
-    print("Axiom Trade Token Discovery Table - FIXED SEARCH BEHAVIOR")
+    print("Axiom Trade Token Discovery Table - FRESH START")
+
+
+    app.run(debug=True, port=5000)
